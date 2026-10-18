@@ -388,7 +388,7 @@ body{background:#020617;color:#dce1fb;font-family:'Inter',sans-serif;background-
 <span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
 <span class="font-code-data text-code-data">System Settings</span>
 </a>
-<a class="flex items-center gap-md px-md py-2 text-on-surface-variant hover:text-error transition-colors" href="#">
+<a class="flex items-center gap-md px-md py-2 text-on-surface-variant hover:text-error transition-colors" href="#" onclick="doLogout()">
 <span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
 <span class="font-code-data text-code-data">Logout</span>
 </a>
@@ -923,7 +923,7 @@ body{background:#020617;color:#dce1fb;font-family:'Inter',sans-serif;background-
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
                 System Settings
             </a>
-<a class="flex items-center gap-md px-sm py-sm rounded text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-all font-code-label text-code-label uppercase tracking-widest active:scale-95 duration-200" href="#">
+<a class="flex items-center gap-md px-sm py-sm rounded text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-all font-code-label text-code-label uppercase tracking-widest active:scale-95 duration-200" href="#" onclick="doLogout()">
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
                 Logout
             </a>
@@ -1442,7 +1442,7 @@ $query = <span class="text-[#a3defe]">"SELECT * FROM users WHERE username = '"</
 <button class="text-on-surface-variant hover:text-secondary transition-colors" title="System Settings">
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
-<button class="text-on-surface-variant hover:text-error transition-colors" title="Logout">
+<button class="text-on-surface-variant hover:text-error transition-colors" title="Logout" onclick="doLogout()">
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
 </button>
 </div>
@@ -1624,7 +1624,7 @@ $query = <span class="text-[#a3defe]">"SELECT * FROM users WHERE username = '"</
 <a class="flex items-center gap-md px-sm py-xs text-on-surface-variant hover:text-secondary font-code-label text-code-label uppercase tracking-widest transition-colors" href="#">
 <span class="material-symbols-outlined">settings</span> System Settings
                 </a>
-<a class="flex items-center gap-md px-sm py-xs text-on-surface-variant hover:text-error font-code-label text-code-label uppercase tracking-widest transition-colors" href="#">
+<a class="flex items-center gap-md px-sm py-xs text-on-surface-variant hover:text-error font-code-label text-code-label uppercase tracking-widest transition-colors" href="#" onclick="doLogout()">
 <span class="material-symbols-outlined">logout</span> Logout
                 </a>
 </div>
@@ -1657,7 +1657,7 @@ $query = <span class="text-[#a3defe]">"SELECT * FROM users WHERE username = '"</
 </div>
 <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10 w-full">
 <div class="flex items-center gap-sm mb-xs">
-<h2 class="font-display-lg text-display-lg md:text-[48px] text-on-surface">Agent <span class="text-primary font-bold">Xerox_99</span></h2>
+<h2 class="font-display-lg text-display-lg md:text-[48px] text-on-surface">Agent <span class="text-primary font-bold" id="profile-username">Xerox_99</span></h2>
 </div>
 <p class="font-code-data text-code-data text-on-surface-variant mb-md flex items-center gap-xs">
 <span class="material-symbols-outlined text-[14px]">location_on</span> Sector 7G · Online
@@ -1689,23 +1689,23 @@ $query = <span class="text-[#a3defe]">"SELECT * FROM users WHERE username = '"</
 <div class="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-gutter">
 <div class="glass-card neon-glow rounded-xl p-md flex flex-col justify-center items-center text-center">
 <span class="material-symbols-outlined text-secondary text-[32px] mb-sm drop-shadow-[0_0_5px_rgba(76,215,246,0.5)]" style="font-variation-settings: 'FILL' 1;">timer</span>
-<span class="font-title-md text-title-md text-on-surface mb-xs">342h</span>
-<span class="font-code-data text-code-data text-on-surface-variant uppercase">Time In Lab</span>
+<span class="font-title-md text-title-md text-on-surface mb-xs" id="profile-xp">342h</span>
+<span class="font-code-data text-code-data text-on-surface-variant uppercase">Total XP</span>
 </div>
 <div class="glass-card neon-glow rounded-xl p-md flex flex-col justify-center items-center text-center">
 <span class="material-symbols-outlined text-primary text-[32px] mb-sm drop-shadow-[0_0_5px_rgba(75,226,119,0.5)]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-title-md text-title-md text-on-surface mb-xs">15.2k</span>
-<span class="font-code-data text-code-data text-on-surface-variant uppercase">Chal. Pts</span>
+<span class="font-title-md text-title-md text-on-surface mb-xs" id="profile-level">15.2k</span>
+<span class="font-code-data text-code-data text-on-surface-variant uppercase">Level</span>
 </div>
 <div class="glass-card neon-glow rounded-xl p-md flex flex-col justify-center items-center text-center">
 <span class="material-symbols-outlined text-tertiary text-[32px] mb-sm drop-shadow-[0_0_5px_rgba(209,189,255,0.5)]" style="font-variation-settings: 'FILL' 1;">done_all</span>
-<span class="font-title-md text-title-md text-on-surface mb-xs">94.8%</span>
-<span class="font-code-data text-code-data text-on-surface-variant uppercase">Accuracy</span>
+<span class="font-title-md text-title-md text-on-surface mb-xs" id="profile-streak">94.8%</span>
+<span class="font-code-data text-code-data text-on-surface-variant uppercase">Day Streak</span>
 </div>
 <div class="glass-card neon-glow rounded-xl p-md flex flex-col justify-center items-center text-center">
 <span class="material-symbols-outlined text-error text-[32px] mb-sm drop-shadow-[0_0_5px_rgba(255,180,171,0.5)]" style="font-variation-settings: 'FILL' 1;">bug_report</span>
-<span class="font-title-md text-title-md text-on-surface mb-xs">127</span>
-<span class="font-code-data text-code-data text-on-surface-variant uppercase">Vulns Found</span>
+<span class="font-title-md text-title-md text-on-surface mb-xs" id="profile-email">127</span>
+<span class="font-code-data text-code-data text-on-surface-variant uppercase">Email</span>
 </div>
 <!-- Completed Courses List span full width of left col -->
 <div class="col-span-2 md:col-span-4 glass-card neon-glow rounded-xl p-md md:p-lg flex flex-col">
@@ -2122,6 +2122,18 @@ function applyUserToUI(){
   if (levelEl) levelEl.textContent = 'Level ' + currentUser.level;
   const xpEl = document.getElementById('cn-xp');
   if (xpEl) xpEl.textContent = currentUser.xp + ' XP';
+
+  // Profile page stats
+  const profUser = document.getElementById('profile-username');
+  if (profUser) profUser.textContent = currentUser.username;
+  const profXp = document.getElementById('profile-xp');
+  if (profXp) profXp.textContent = currentUser.xp.toLocaleString() + ' XP';
+  const profLevel = document.getElementById('profile-level');
+  if (profLevel) profLevel.textContent = 'Level ' + currentUser.level;
+  const profStreak = document.getElementById('profile-streak');
+  if (profStreak) profStreak.textContent = (currentUser.currentStreak ?? 0) + ' Days';
+  const profEmail = document.getElementById('profile-email');
+  if (profEmail) profEmail.textContent = currentUser.email;
 
   // Same real values, on the Dashboard header/stat cards.
   const dashLevelEl = document.getElementById('cn-dash-level');
